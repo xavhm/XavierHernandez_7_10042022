@@ -1,2 +1,3 @@
-# XavierHernandez_7_10042022
-Project 7 OC - Parcours Front-End
+# Les Petites Recettes
+Project 7 OC - Parcours Front-End <br>
+Work in progress...
