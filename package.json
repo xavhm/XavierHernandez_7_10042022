@@ -1,0 +1,19 @@
+{
+  "name": "p7_xavier_hernandez",
+  "version": "1.0.0",
+  "description": "Project 7 OC - Parcours Front-End",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XavHernandez/XavierHernandez_7_10042022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XavHernandez/XavierHernandez_7_10042022/issues"
+  },
+  "homepage": "https://github.com/XavHernandez/XavierHernandez_7_10042022#readme"
+}
