@@ -4,7 +4,8 @@
   "description": "Project 7 OC - Parcours Front-End",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prefix": "postcss scss/main.css --use autoprefixer -d public/css/"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.4"
   }
 }
