@@ -1,1 +1,13 @@
+@import "utils/variables";
+@import "base/typography";
+@import "components/buttons";
+@import "pages/index.scss";
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}

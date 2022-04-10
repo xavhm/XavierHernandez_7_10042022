@@ -4,9 +4,83 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="Les Petits Plats" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.petitsplats.com" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1466978913421-d dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+    />
+    <meta property="og:description" content="Toutes les recettes de vos plats favoris." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@petits_plats" />
+    <meta name="twitter:title" content="Les Petits Plats" />
+    <meta name="twitter:description" content="Toutes les recettes de vos plats favoris." />
+    <meta name="twitter:creator" content="@petits_plats" />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+    />
+
     <script src="https://kit.fontawesome.com/46806d9191.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./images/brand-logo.svg" />
     <link rel="stylesheet" href="./scss/main.css" />
     <title>Les Petits Plats</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="images">
+        <img class="logo" src="images/brand-logo.svg" alt="Logo Les petits plats" />
+        <img class="name" src="images/brand-name.svg" alt="Brand name Les petits plats" />
+      </div>
+      <div class="search-bar">
+        <input
+          type="search"
+          id="site-search"
+          name="q"
+          aria-label="Search through site content"
+          placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+        />
+        <button type="button"><img src="images/search-icon.svg" alt="search icon" /></button>
+      </div>
+    </header>
+    <main id="content">
+      <aside class="research-tag"></aside>
+      <nav id="filters">
+        <form class="first-filter">
+          <div class="filter-button">
+            <input type="search" class="ingredients-input filter-input" placeholder="Ingrédients" />
+            <button type="button">
+              <img class="ingredients-button" src="./images/more-filters.svg" alt="extend button" />
+            </button>
+          </div>
+          <ul class="list-content ingredients-content"></ul>
+        </form>
+        <form class="second-filter">
+          <div class="filter-button">
+            <input type="search" class="appliances-input filter-input" placeholder="Appareils" />
+            <button type="button">
+              <img class="appliances-button" src="./images/more-filters.svg" alt="extend button" />
+            </button>
+          </div>
+          <ul class="list-content appliances-content"></ul>
+        </form>
+        <form class="third-filter">
+          <div class="filter-button">
+            <input type="search" class="ustensils-input filter-input" placeholder="Ustensiles" />
+            <button type="button">
+              <img class="ustensils-button" src="./images/more-filters.svg" alt="extend button" />
+            </button>
+          </div>
+          <ul class="list-content ustensils-content"></ul>
+        </form>
+      </nav>
+      <section id="recipes">
+        <h2 aria-label="hidden">Recettes Cards</h2>
+      </section>
+    </main>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
 </html>

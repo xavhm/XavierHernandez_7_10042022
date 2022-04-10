@@ -1,1 +1,333 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap");
+.research-tag {
+  margin: 25px 0 0 100px;
+}
+
+.research-tag .tag-item {
+  background: #3282f7;
+  border-radius: 5px;
+  color: #fff;
+  margin-right: 15px;
+  font: 700 14px "Lato", sans-serif;
+  justify-content: space-around;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.research-tag .tag-item .text {
+  padding: 10px;
+}
+
+.research-tag .tag-item img {
+  padding: 10px 10px 10px 5px;
+}
+
+#filters {
+  margin: 15px 0px 25px 100px;
+  display: flex;
+  max-width: 1240px;
+  gap: 20px;
+  height: 70px;
+  z-index: 10;
+}
+
+#filters .first-filter {
+  z-index: 10;
+}
+
+#filters .first-filter input,
+#filters .first-filter .ingredients-content {
+  background: #3282f7;
+}
+
+#filters .second-filter {
+  z-index: 10;
+}
+
+#filters .second-filter input,
+#filters .second-filter .appliances-content {
+  background: #68d9a4;
+}
+
+#filters .third-filter {
+  z-index: 10;
+}
+
+#filters .third-filter input,
+#filters .third-filter .ustensils-content {
+  background: #ed6454;
+}
+
+#filters form .filter-button {
+  position: relative;
+  height: 69px;
+}
+
+#filters form .filter-button input {
+  width: 170px;
+  height: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font: 500 18px "Roboto", sans-serif;
+  padding-left: 26px;
+}
+
+#filters form .filter-button input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+#filters form .filter-button input:-ms-input-placeholder {
+  color: #fff;
+}
+
+#filters form .filter-button input::-ms-input-placeholder {
+  color: #fff;
+}
+
+#filters form .filter-button input::placeholder {
+  color: #fff;
+}
+
+#filters form .filter-button input:active,
+#filters form .filter-button input:focus {
+  outline: none;
+}
+
+#filters form .filter-button button {
+  position: absolute;
+  top: 28px;
+  right: 6%;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+#filters form .list-content {
+  margin: -7px 0 0 0;
+  padding: 0;
+  color: #fff;
+  list-style: none;
+  font: 400 18px "Lato", sans-serif;
+  grid-template-columns: repeat(3, 2fr);
+  grid-template-rows: 1fr;
+  gap: 10px 20px;
+  padding: 17.5px;
+  border-radius: 5px;
+  display: none;
+  z-index: 10;
+}
+
+#filters form .list-content li {
+  width: 200px;
+  gap: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#filters form .list-content .missing {
+  text-overflow: inherit;
+  overflow: visible;
+}
+
+body {
+  max-width: 1440px;
+  margin: auto;
+}
+
+body header .images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body header .images .logo {
+  width: 51px;
+  height: 46px;
+  margin: 40px 0 3px 0;
+}
+
+body header .images .name {
+  width: 270px;
+  height: 50px;
+  margin-bottom: 12px;
+}
+
+body header .search-bar {
+  display: flex;
+  margin: auto;
+  max-width: 1240px;
+  height: 69px;
+  position: relative;
+}
+
+body header .search-bar #site-search {
+  font: 400 18px "Lato", sans-serif;
+  padding-left: 22px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background: #e7e7e7;
+}
+
+body header .search-bar #site-search:active,
+body header .search-bar #site-search:focus {
+  outline: none;
+}
+
+body header .search-bar #site-search::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+body header .search-bar #site-search:-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+body header .search-bar #site-search::-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+body header .search-bar #site-search::placeholder {
+  opacity: 0.5;
+}
+
+body header .search-bar button {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 16px;
+  top: 18px;
+}
+
+body #recipes {
+  display: flex;
+  justify-content: left;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 50px;
+  width: 1240px;
+}
+
+body #recipes .missing {
+  font: 400 25px "Lato", sans-serif;
+  margin: 25px auto;
+  text-align: center;
+}
+
+body #recipes .recipeCard {
+  width: 380px;
+  height: 364px;
+  cursor: pointer;
+}
+
+body #recipes .recipeCard h2,
+body #recipes .recipeCard p {
+  margin: 0;
+  padding: 0;
+}
+
+body #recipes .recipeCard .image {
+  width: 100%;
+  height: 50%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+body #recipes .recipeCard .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+body #recipes .recipeCard .textContent {
+  background: #e7e7e7;
+  width: 100%;
+  height: 50%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+body #recipes .recipeCard .textContent .textContentUp {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Lato", sans-serif;
+  padding: 20px;
+}
+
+body #recipes .recipeCard .textContent .textContentUp .name {
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 230px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+body #recipes .recipeCard .textContent .textContentUp .time {
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+body #recipes .recipeCard .textContent .textContentUp .time .clock {
+  height: 20px;
+  width: 20px;
+  margin-right: 7px;
+}
+
+body #recipes .recipeCard .textContent .textContentDown {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px 20px 20px;
+  height: 100px;
+  overflow: hidden;
+}
+
+body #recipes .recipeCard .textContent .textContentDown .ingredients {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 12px;
+  max-width: 171px;
+  height: 87px;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+body #recipes .recipeCard .textContent .textContentDown .ingredients span {
+  font-weight: 700;
+}
+
+body #recipes .recipeCard .textContent .textContentDown .description {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  width: 171px;
+  height: 86px;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+/*# sourceMappingURL=main.css.map */
