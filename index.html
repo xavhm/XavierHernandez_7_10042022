@@ -35,48 +35,74 @@
         <img class="logo" src="images/brand-logo.svg" alt="Logo Les petits plats" />
         <img class="name" src="images/brand-name.svg" alt="Brand name Les petits plats" />
       </div>
-      <div class="search-bar">
+      <div class="search-bar" role="search">
         <input
           type="search"
           id="site-search"
-          name="q"
           aria-label="Search through site content"
           placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
         />
-        <button type="button"><img src="images/search-icon.svg" alt="search icon" /></button>
+        <button type="button"><img src="images/search-icon.svg" alt="Search Icon" /></button>
       </div>
     </header>
     <main id="content">
-      <aside class="research-tag"></aside>
-      <nav id="filters">
+      <section class="research-tag"></section>
+      <section id="filters">
         <form class="first-filter">
-          <div class="filter-button">
-            <input type="search" class="ingredients-input filter-input" placeholder="Ingrédients" />
+          <div class="filter-button" id="Ingredients Selection">
+            <input
+              type="search"
+              class="ingredients-input filter-input"
+              placeholder="Ingrédients"
+              aria-labelledby="Ingredients Selection"
+            />
             <button type="button">
-              <img class="ingredients-button" src="./images/more-filters.svg" alt="extend button" />
+              <img
+                class="ingredients-button"
+                src="./images/more-filters.svg"
+                alt="Open Menu Symbol"
+              />
             </button>
           </div>
           <ul class="list-content ingredients-content"></ul>
         </form>
         <form class="second-filter">
-          <div class="filter-button">
-            <input type="search" class="appliances-input filter-input" placeholder="Appareils" />
+          <div class="filter-button" id="Appareils Selection">
+            <input
+              type="search"
+              class="appliances-input filter-input"
+              placeholder="Appareils"
+              aria-labelledby="Appareils Selection"
+            />
             <button type="button">
-              <img class="appliances-button" src="./images/more-filters.svg" alt="extend button" />
+              <img
+                class="appliances-button"
+                src="./images/more-filters.svg"
+                alt="Open Menu Symbol"
+              />
             </button>
           </div>
           <ul class="list-content appliances-content"></ul>
         </form>
         <form class="third-filter">
-          <div class="filter-button">
-            <input type="search" class="ustensils-input filter-input" placeholder="Ustensiles" />
+          <div class="filter-button" id="Ustensils Selection">
+            <input
+              type="search"
+              class="ustensils-input filter-input"
+              placeholder="Ustensiles"
+              aria-labelledby="Ustensils Selection"
+            />
             <button type="button">
-              <img class="ustensils-button" src="./images/more-filters.svg" alt="extend button" />
+              <img
+                class="ustensils-button"
+                src="./images/more-filters.svg"
+                alt="Open Menu Symbol"
+              />
             </button>
           </div>
           <ul class="list-content ustensils-content"></ul>
         </form>
-      </nav>
+      </section>
       <section id="recipes">
         <h2 aria-label="Listes des recettes">Recettes Cards</h2>
       </section>
