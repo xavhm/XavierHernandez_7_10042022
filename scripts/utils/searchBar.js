@@ -2,10 +2,7 @@ import { lowerCaseNormalize, displayRecipes, generateFiltersLists } from "../mai
 import { searchOnFiltersList } from "./filters.js";
 import { recipes } from "../main.js";
 
-export { searchBar };
-
 // search on navbar
-
 function searchBar(recipesList) {
   const searchInput = document.getElementById("site-search");
   const recipesSection = document.getElementById("recipes");
@@ -44,3 +41,5 @@ function searchBar(recipesList) {
     }
   });
 }
+
+export { searchBar };

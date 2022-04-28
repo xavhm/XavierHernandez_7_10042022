@@ -1,8 +1,6 @@
 import { generateFiltersLists, displayRecipes, lowerCaseNormalize } from "../main.js";
 import { searchBar } from "./searchBar.js";
 
-export { init, createFiltersLists, searchOnFiltersList };
-
 function init(recipesList) {
   displayRecipes(recipesList);
   searchBar(recipesList);
@@ -12,8 +10,7 @@ function init(recipesList) {
   removeTags(recipesList);
 }
 
-//// create filter lists from a pattern ////
-
+// create filter lists from a pattern
 function createFiltersLists(recipesList, ingredientsList, appliancesList, ustensilsList) {
   const ingredientsContainer = document.querySelector(".ingredients-content");
   ingredientsContainer.innerHTML = "";
@@ -31,7 +28,6 @@ function createFiltersLists(recipesList, ingredientsList, appliancesList, ustens
 }
 
 // pattern
-
 function filtersListPattern(ElementList, ElementListcontent) {
   ElementList.forEach((element) => {
     const createListsDOM = document.createElement("li");
@@ -41,8 +37,7 @@ function filtersListPattern(ElementList, ElementListcontent) {
   });
 }
 
-//// search algo on filters lists, update filters lists ////
-
+// search algo on filters lists, update filters lists
 function searchOnFiltersList(recipesList, generateFiltersLists) {
   const filtersItems = generateFiltersLists(recipesList);
   const filtersInput = document.querySelectorAll(".filter-input");
@@ -93,8 +88,7 @@ function searchOnFiltersList(recipesList, generateFiltersLists) {
   });
 }
 
-//// show and close filters lists (one by one) ////
-
+// show and close filters lists (one by one)
 function displayLists(obj, objlist, item, targetFilter) {
   if (targetFilter.includes(item) && obj.isFilterOpen == false) {
     for (let o of objlist) {
@@ -158,11 +152,8 @@ function displayListsInit() {
   });
 }
 
-//// Create, add, remove tags ////
-
+// Create, add, remove tags
 let tagsArray = [];
-
-// tag pattern
 
 function createTag(item) {
   const tag = document.createElement("div");
@@ -181,7 +172,6 @@ function createTag(item) {
 }
 
 // prevent redisplaying the entire array list
-
 function resetTags() {
   document.querySelectorAll(".tag-item").forEach(function (tag) {
     tag.parentElement.removeChild(tag);
@@ -189,7 +179,6 @@ function resetTags() {
 }
 
 // create tags from tag pattern
-
 function addTags() {
   resetTags();
   const researchTag = document.querySelector(".research-tag");
@@ -200,7 +189,6 @@ function addTags() {
 }
 
 // display tags, launch function to filter recipes display
-
 function displayTags(recipesList) {
   let listItems = document.querySelectorAll(".list-item");
   listItems.forEach((item) => {
@@ -216,7 +204,6 @@ function displayTags(recipesList) {
 }
 
 // remove tags on click
-
 function removeTags(recipesList) {
   document.addEventListener("click", function (e) {
     if (e.target.className === "closebtn") {
@@ -229,8 +216,7 @@ function removeTags(recipesList) {
   });
 }
 
-//// displays the recipes containing the displayed tags ////
-
+// displays the recipes containing the displayed tags
 function displayByTagSearch(recipesList) {
   const recipesSection = document.getElementById("recipes");
   const tags = document.querySelectorAll(".tag-item");
@@ -255,3 +241,5 @@ function displayByTagSearch(recipesList) {
     generateFiltersLists(filteredFilters);
   }
 }
+
+export { init, createFiltersLists, searchOnFiltersList };

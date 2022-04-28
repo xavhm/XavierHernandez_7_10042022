@@ -1,7 +1,3 @@
-export { RecipesCard };
-
-// Create recipies cards
-
 class RecipesCard {
   constructor(recipe) {
     this.id = recipe.id;
@@ -45,8 +41,9 @@ class RecipesCard {
           </ul>
           <p class="description">${this.description}</p>
         </div>
-      </div>
-    `;
+      </div>`;
     return card;
   }
 }
+
+export { RecipesCard };

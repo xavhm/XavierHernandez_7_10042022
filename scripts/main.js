@@ -8,29 +8,26 @@ let recipes;
 async function fetch() {
   const api = new API("../scripts/data/data.json");
   recipes = await api.getRecipes();
-  getData();
+  data();
+  // getData();
 }
-
-export { lowerCaseNormalize, displayRecipes, generateFiltersLists, recipes };
 
 //// get recipes list (original + updated) and launch init ////
-
-function getData(recipesList) {
-  recipesList = data();
-  init(recipesList);
-}
+// function getData(recipesList) {
+//   recipesList = data();
+// }
 
 function data() {
   const searchInput = document.getElementById("site-search");
   let recipesList = recipes;
-  if (searchInput.value >= 3) {
+  if (searchInput.value.length >= 3) {
     recipesList = searchBar(recipesList);
   }
+  init(recipesList);
   return recipesList;
 }
 
 //// display recipes function ////
-
 function displayRecipes(recipesList) {
   const recipesSection = document.getElementById("recipes");
   recipesSection.innerHTML = "";
@@ -40,7 +37,6 @@ function displayRecipes(recipesList) {
 }
 
 //// generate and create filters lists ////
-
 function generateFiltersLists(recipesList, ingredientsList, appliancesList, ustensilsList) {
   let ingredients = [];
   let appliances = [];
@@ -63,7 +59,6 @@ function generateFiltersLists(recipesList, ingredientsList, appliancesList, uste
 }
 
 //// function to lower case and normalize text ////
-
 function lowerCaseNormalize(items) {
   return items
     .toLowerCase()
@@ -72,5 +67,6 @@ function lowerCaseNormalize(items) {
 }
 
 //// launch ////
-// getData();
 fetch();
+
+export { lowerCaseNormalize, displayRecipes, generateFiltersLists, recipes };
