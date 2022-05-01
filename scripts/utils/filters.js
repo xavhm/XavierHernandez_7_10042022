@@ -1,4 +1,4 @@
-import { generateFiltersLists, displayRecipes, lowerCaseNormalize } from "../main.js";
+import { generateFiltersLists, displayRecipes } from "../main.js";
 import { removeTags, displayTags } from "../utils/tags.js";
 import { searchBar } from "./searchBar.js";
 
@@ -11,7 +11,7 @@ function init(recipesList) {
   removeTags(recipesList);
 }
 
-// create filter lists from a pattern
+// Générer les listes de filtres
 function createFiltersLists(recipesList, ingredientsList, appliancesList, ustensilsList) {
   const ingredientsContainer = document.querySelector(".ingredients-content");
   ingredientsContainer.innerHTML = "";
@@ -28,7 +28,7 @@ function createFiltersLists(recipesList, ingredientsList, appliancesList, ustens
   displayTags(recipesList);
 }
 
-// pattern
+// Afficher les listes de filtres
 function filtersListPattern(ElementList, ElementListcontent) {
   ElementList.forEach((element) => {
     const createListsDOM = document.createElement("li");
@@ -38,7 +38,7 @@ function filtersListPattern(ElementList, ElementListcontent) {
   });
 }
 
-// search algo on filters lists, update filters lists
+// Recherche et Update des listes de filtres
 function searchOnFiltersList(recipesList, generateFiltersLists) {
   const filtersItems = generateFiltersLists(recipesList);
   const filtersInput = document.querySelectorAll(".filter-input");
@@ -47,9 +47,9 @@ function searchOnFiltersList(recipesList, generateFiltersLists) {
     input.addEventListener("keyup", function (e) {
       const targetFilter = e.target.className;
       if (targetFilter.includes("ingredients")) {
-        const searchInput = lowerCaseNormalize(e.target.value);
+        const searchInput = e.target.value;
         const filteredIngredients = filtersItems.ingredientsList.filter((ingredient) => {
-          return lowerCaseNormalize(ingredient).includes(searchInput);
+          return ingredient.includes(searchInput);
         });
 
         createFiltersLists(
@@ -60,9 +60,9 @@ function searchOnFiltersList(recipesList, generateFiltersLists) {
         );
       }
       if (targetFilter.includes("appliances")) {
-        const searchInput = lowerCaseNormalize(e.target.value);
+        const searchInput = e.target.value;
         const filteredAppliances = filtersItems.appliancesList.filter((appliance) => {
-          return lowerCaseNormalize(appliance).includes(searchInput);
+          return appliance.includes(searchInput);
         });
 
         createFiltersLists(
@@ -73,9 +73,9 @@ function searchOnFiltersList(recipesList, generateFiltersLists) {
         );
       }
       if (targetFilter.includes("ustensils")) {
-        const searchInput = lowerCaseNormalize(e.target.value);
+        const searchInput = e.target.value;
         const filteredUstensils = filtersItems.ustensilsList.filter((ustensil) => {
-          return lowerCaseNormalize(ustensil).includes(searchInput);
+          return ustensil.includes(searchInput);
         });
 
         createFiltersLists(
@@ -89,7 +89,7 @@ function searchOnFiltersList(recipesList, generateFiltersLists) {
   });
 }
 
-// show and close filters lists (one by one)
+// Gérer l'affichage des selectMenus pour les filtres
 function displayLists(obj, objlist, item, targetFilter) {
   if (targetFilter.includes(item) && obj.isFilterOpen == false) {
     for (let o of objlist) {

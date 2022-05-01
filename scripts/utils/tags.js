@@ -1,4 +1,4 @@
-import { lowerCaseNormalize, displayRecipes, generateFiltersLists } from "../main.js";
+import { displayRecipes, generateFiltersLists } from "../main.js";
 
 let tagsArray = [];
 
@@ -18,14 +18,13 @@ function createTag(item) {
   return tag;
 }
 
-// prevent redisplaying the entire array list
 function resetTags() {
   document.querySelectorAll(".tag-item").forEach(function (tag) {
     tag.parentElement.removeChild(tag);
   });
 }
 
-// create tags from tag pattern
+// Afficher la liste des Tags
 function addTags() {
   resetTags();
   const researchTag = document.querySelector(".research-tag");
@@ -35,7 +34,7 @@ function addTags() {
   });
 }
 
-// display tags, launch function to filter recipes display
+// Afficher la séléction des Tags
 function displayTags(recipesList) {
   let listItems = document.querySelectorAll(".list-item");
   listItems.forEach((item) => {
@@ -50,7 +49,7 @@ function displayTags(recipesList) {
   });
 }
 
-// remove tags on click
+// Supprimer un Tag
 function removeTags(recipesList) {
   document.addEventListener("click", function (e) {
     if (e.target.className === "closebtn") {
@@ -63,21 +62,21 @@ function removeTags(recipesList) {
   });
 }
 
-// displays the recipes containing the displayed tags
+// Filter les recettes par Tags
 function displayByTagSearch(recipesList) {
   const recipesSection = document.getElementById("recipes");
   const tags = document.querySelectorAll(".tag-item");
   const filters = Array.from(tags);
   const filteredFilters = recipesList.filter((recipe) => {
     return filters.every((item) => {
-      const formatedItem = lowerCaseNormalize(item.textContent);
+      const formatedItem = item.textContent;
       return (
         recipe.ingredients.some((i) => {
-          return lowerCaseNormalize(i.ingredient).includes(formatedItem);
+          return i.ingredient.includes(formatedItem);
         }) ||
-        lowerCaseNormalize(recipe.appliance).includes(formatedItem) ||
+        recipe.appliance.includes(formatedItem) ||
         recipe.ustensils.some((ustensil) => {
-          return lowerCaseNormalize(ustensil) === formatedItem;
+          return ustensil === formatedItem;
         })
       );
     });

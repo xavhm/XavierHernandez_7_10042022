@@ -9,13 +9,7 @@ async function fetch() {
   const api = new API("../scripts/data/data.json");
   recipes = await api.getRecipes();
   data();
-  // getData();
 }
-
-//// get recipes list (original + updated) and launch init ////
-// function getData(recipesList) {
-//   recipesList = data();
-// }
 
 function data() {
   const searchInput = document.getElementById("site-search");
@@ -27,7 +21,7 @@ function data() {
   return recipesList;
 }
 
-//// display recipes function ////
+// Afficher les recettes
 function displayRecipes(recipesList) {
   const recipesSection = document.getElementById("recipes");
   recipesSection.innerHTML = "";
@@ -36,7 +30,7 @@ function displayRecipes(recipesList) {
   });
 }
 
-//// generate and create filters lists ////
+// Générer la liste des filtres
 function generateFiltersLists(recipesList, ingredientsList, appliancesList, ustensilsList) {
   let ingredients = [];
   let appliances = [];
@@ -58,15 +52,7 @@ function generateFiltersLists(recipesList, ingredientsList, appliancesList, uste
   return { ingredientsList, appliancesList, ustensilsList };
 }
 
-//// function to lower case and normalize text ////
-function lowerCaseNormalize(items) {
-  return items
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-}
-
-//// launch ////
+// Initialiser l'app
 fetch();
 
-export { lowerCaseNormalize, displayRecipes, generateFiltersLists, recipes };
+export { displayRecipes, generateFiltersLists, recipes };

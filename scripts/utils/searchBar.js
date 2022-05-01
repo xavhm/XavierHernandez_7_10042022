@@ -1,26 +1,26 @@
-import { lowerCaseNormalize, displayRecipes, generateFiltersLists } from "../main.js";
+import { displayRecipes, generateFiltersLists } from "../main.js";
 import { searchOnFiltersList } from "./filters.js";
 import { recipes } from "../main.js";
 
-// search on navbar
+// Barre de recherche
 function searchBar(recipesList) {
   const searchInput = document.getElementById("site-search");
   const recipesSection = document.getElementById("recipes");
 
-  // listen search bar input
+  // EventListener sur la barre de recherche
   searchInput.addEventListener("keyup", (e) => {
-    const input = lowerCaseNormalize(e.target.value);
-    // get filtered recipes object
+    const input = e.target.value;
+    // Filtrer les recettes selon recherche
     let filteredRecipies = recipesList.filter((recipe) => {
       const recipeIngredients = recipe.ingredients.map((element) => element.ingredient).toString();
       return (
-        lowerCaseNormalize(recipe.name).includes(input) ||
-        lowerCaseNormalize(recipeIngredients).includes(input) ||
-        lowerCaseNormalize(recipe.description).includes(input)
+        recipe.name.includes(input) ||
+        recipeIngredients.includes(input) ||
+        recipe.description.includes(input)
       );
     });
 
-    // displays recipes under conditions
+    // Affichage conditionnel des recettes
     if (input.length >= 3) {
       if (filteredRecipies.length > 0) {
         recipesList = filteredRecipies;
