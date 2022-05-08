@@ -10,6 +10,15 @@ function searchBar(recipesList) {
   // EventListener sur la barre de recherche
   searchInput.addEventListener("keyup", (e) => {
     const input = e.target.value;
+
+    if (input.length < 3) {
+      recipesList = recipes;
+      displayRecipes(recipesList);
+      generateFiltersLists(recipesList);
+      searchOnFiltersList(recipesList, generateFiltersLists);
+      return;
+    }
+
     // Filtrer les recettes selon recherche
     let filteredRecipies = recipesList.filter((recipe) => {
       const recipeIngredients = recipe.ingredients.map((element) => element.ingredient).toString();
@@ -21,21 +30,14 @@ function searchBar(recipesList) {
     });
 
     // Affichage conditionnel des recettes
-    if (input.length >= 3) {
-      if (filteredRecipies.length > 0) {
-        recipesList = filteredRecipies;
-        displayRecipes(recipesList);
-        generateFiltersLists(recipesList);
-        searchOnFiltersList(recipesList, generateFiltersLists);
-      } else {
-        recipesSection.innerHTML =
-          "<div class='missing'>Aucune recette ne correspond à votre critère… <br />Vous pouvez chercher « tarte aux pommes », « poisson », etc.</div>";
-        generateFiltersLists(recipesList);
-        searchOnFiltersList(recipesList, generateFiltersLists);
-      }
-    } else if (input.length <= 3) {
-      recipesList = recipes;
+    if (filteredRecipies.length > 0) {
+      recipesList = filteredRecipies;
       displayRecipes(recipesList);
+      generateFiltersLists(recipesList);
+      searchOnFiltersList(recipesList, generateFiltersLists);
+    } else {
+      recipesSection.innerHTML =
+        "<div class='missing'>Aucune recette ne correspond à votre critère… <br />Vous pouvez chercher « tarte aux pommes », « poisson », etc.</div>";
       generateFiltersLists(recipesList);
       searchOnFiltersList(recipesList, generateFiltersLists);
     }
