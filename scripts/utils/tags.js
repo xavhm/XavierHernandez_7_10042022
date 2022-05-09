@@ -88,4 +88,4 @@ function displayByTagSearch(recipesList) {
   }
 }
 
-export { displayTags, removeTags };
+export { displayTags, removeTags, resetTags };
