@@ -23,10 +23,12 @@ function searchBar(recipesList) {
 
     // Filtrer les recettes selon recherche
     let filteredRecipies = [];
-    recipesList.forEach((recipe) => {
+    for (const recipe of recipesList) {
       let totalIngredientsList = [];
       const recipeIngredients = recipe.ingredients;
-      recipeIngredients.forEach((ingredient) => totalIngredientsList.push(ingredient.ingredient));
+      for (const ingredient of recipeIngredients) {
+        totalIngredientsList.push(ingredient.ingredient);
+      }
       if (
         recipe.name.includes(input) ||
         recipe.description.includes(input) ||
@@ -34,7 +36,7 @@ function searchBar(recipesList) {
       ) {
         filteredRecipies.push(recipe);
       }
-    });
+    }
 
     // Affichage conditionnel des recettes
     if (filteredRecipies.length > 0) {
