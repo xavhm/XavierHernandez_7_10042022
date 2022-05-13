@@ -46,7 +46,6 @@ function generateFiltersLists(recipesList, ingredientsList, appliancesList, uste
   appliancesList = [...new Set(appliances)].sort();
   ustensilsList = [...new Set(ustensils)].sort();
 
-  console.log(recipesList, ingredientsList, appliancesList, ustensilsList);
   createFiltersLists(recipesList, ingredientsList, appliancesList, ustensilsList);
 
   return { ingredientsList, appliancesList, ustensilsList };

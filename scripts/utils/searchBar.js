@@ -22,13 +22,18 @@ function searchBar(recipesList) {
     }
 
     // Filtrer les recettes selon recherche
-    let filteredRecipies = recipesList.filter((recipe) => {
-      const recipeIngredients = recipe.ingredients.map((element) => element.ingredient).toString();
-      return (
+    let filteredRecipies = [];
+    recipesList.forEach((recipe) => {
+      let totalIngredientsList = [];
+      const recipeIngredients = recipe.ingredients;
+      recipeIngredients.forEach((ingredient) => totalIngredientsList.push(ingredient.ingredient));
+      if (
         recipe.name.includes(input) ||
-        recipeIngredients.includes(input) ||
-        recipe.description.includes(input)
-      );
+        recipe.description.includes(input) ||
+        totalIngredientsList.includes(input)
+      ) {
+        filteredRecipies.push(recipe);
+      }
     });
 
     // Affichage conditionnel des recettes
