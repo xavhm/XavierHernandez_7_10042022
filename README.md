@@ -5,7 +5,7 @@ Septième projet du parcours "Développeur Front-End" chez OpenClassroom. L'obje
 ## Objectifs
 
 1. Mettre en place un algorithme de recherche.
-2. Comparer les performances entre deux algorithmes (via JSBench).
+2. Comparer les performances entre deux algorithmes (via JSBen).
 3. Utiliser les boucles natives de JS ainsi que les méthodes d'Array.
 
 ## Technologies
