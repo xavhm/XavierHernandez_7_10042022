@@ -6,7 +6,9 @@ import { init, createFiltersLists } from "./utils/filters.js";
 let recipes;
 
 async function fetch() {
-  const api = new API("../scripts/data/data.json");
+  const api = new API(
+    "https://xavhernandez.github.io/XavierHernandez_7_10042022//scripts/data/data.json"
+  );
   recipes = await api.getRecipes();
   data();
 }
