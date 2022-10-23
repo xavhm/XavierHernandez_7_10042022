@@ -14,4 +14,4 @@ HTML / SASS / JS Vanilla / ESLint
 
 ## Tester le projet
 
-Pour tester simplement & rapidement, veuillez préférer visiter la démo en ligne : [Hosted on Github-Pages](https://xavhernandez.github.io/XavierHernandez_7_10042022/) <br>
+Pour tester simplement & rapidement, veuillez préférer visiter la démo en ligne : [Hosted on Github-Pages](https://xavhm.github.io/XavierHernandez_7_10042022/) <br>
